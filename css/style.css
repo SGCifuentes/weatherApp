@@ -1,5 +1,6 @@
 body {
-  background-color: #2b3a5f;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #011627, #034072);
   margin: 0 auto;
   display: flex;
   justify-content: center;
