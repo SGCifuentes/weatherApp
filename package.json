@@ -1,0 +1,27 @@
+{
+  "name": "weatherapp",
+  "version": "1.0.0",
+  "description": "App to know the weather of different cities",
+  "main": "./js/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SGCifuentes/weatherApp.git"
+  },
+  "keywords": [
+    "WeatherApp",
+    "javascript",
+    "sass"
+  ],
+  "author": "Sebastian Gonzalez <sebastiangc19.01@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SGCifuentes/weatherApp/issues"
+  },
+  "homepage": "https://github.com/SGCifuentes/weatherApp#readme",
+  "dependencies": {
+    "static-server": "^2.2.1"
+  }
+}
