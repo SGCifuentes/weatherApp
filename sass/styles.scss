@@ -1,57 +1,110 @@
+@import "https://meyerweb.com/eric/tools/css/reset/reset.css";
+
+@import "utilities/variables";
+@import "utilities/mixins";
+
+a, ul, li, input, form, button, label, textarea {
+  font-size: inherit;
+  color: inherit;
+}
+
+html {
+  font-size: $font-size-base;
+}
+
 body {
+  @include background-gradient;
+  @include flexColumn;
+  font-family: $font-family;
   min-height: 100vh;
-  background-image: linear-gradient(to bottom, #2f3e46, #3b585e, #4b7372, #638e81, #84a98c);
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
+  color: $color-ash-gray;
+  align-items: center;
+  padding-top: 2rem;
+  font-weight: normal;
 }
 
 .site__header {
-  margin: 30px 0;
+  @include flexColumn;
+  width: 100%;
+  align-content: center;
+  margin-bottom: 3rem;
 }
 
 .header__title {
+  font-size: $font-size-xl;
+  text: {
+    transform: uppercase;
+    shadow: 0 0.6rem 0.7rem #b1c49d, 0 -0.1rem 0.1rem #fff;
+  }
+  text-transform: uppercase;
+  font-weight: bold;
+  position: relative;
+  top: 0;
+  left: 50%;
+  margin: 2.5rem 0;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
   text-align: center;
 }
 
-h1 {
-  color: white;
-}
-
-.add-city--form {
-  display: flex;
-  flex-direction: column;
+.add-city--form{
+@include flexColumn;
+  height: 8rem;
   justify-content: space-between;
   align-items: center;
-  min-height: 50px;
 }
 
 #city-name {
+  @include borderAndOutline;
+  height: 3rem;
+  width: 80%;
+  font-family: inherit;
   background-color: transparent;
-  color: white;
-  outline: none;
-  border: none;
-  border-bottom: 1px solid white;
+  border-bottom: 0.4rem solid $color-ash-gray;
+  color: $color-ash-gray;
+  font-size: $font-size-sm;
   &::placeholder {
-    color: rgb(165, 165, 165);
+    font-size: $font-size-xs;
+    color: darken($color-ash-gray, 20%);
+    text-align: center;
+  }
+  &:focus {
+    border-bottom: 0.3rem dashed;
   }
 }
 
 #add-city {
-  background-color: #4986d1;
-  border: 2px solid #386296;
-  outline: none;
-  width: 35%;
+  @include borderAndOutline;
+  width: 10rem;
+  height: 3rem;
+  font-family: inherit;
+  background-color: $color-hookers-green;
+  color: lighten($color-dark-sea-green, 15%);
+  font-weight: bold;
+  font-size: $font-size-xs;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
 }
 
 .site__cards {
-  margin: 0 auto;
-  display: flex; 
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
 }
 
 .card {
-  background-color: #8dcbff;
-  height: 50vh;
-  width: 60vw;
-  margin-right: 10px;
+  background-color: $color-ash-gray;
+  min-width: 25rem;
+  min-height: 35rem;
+  margin-right: 1rem;
+  border: 1px solid red;
 }
+
+p {
+  font-size: $font-size-lg;
+  color: black;
+  background-color: tomato;
+}
+

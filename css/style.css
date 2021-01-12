@@ -1,59 +1,117 @@
+@import "https://meyerweb.com/eric/tools/css/reset/reset.css";
+/* COLORS */
+/* FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+/* BreakPoint */
+a, ul, li, input, form, button, label, textarea {
+  font-size: inherit;
+  color: inherit;
+}
+
+html {
+  font-size: 10px;
+}
+
 body {
-  min-height: 100vh;
-  background-image: linear-gradient(to bottom, #2f3e46, #3b585e, #4b7372, #638e81, #84a98c);
-  margin: 0 auto;
+  background: #2f3e46 no-repeat;
+  background: -moz-linear-gradient(180deg, #2f3e46 25%, #52796f 75%);
+  background: -webkit-linear-gradient(180deg, #2f3e46 25%, #52796f 75%);
+  background: linear-gradient(180deg, #2f3e46 25%, #52796f 75%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2f3e46", endColorstr="#52796f", GradientType=1);
   display: flex;
   flex-direction: column;
+  font-family: "Roboto", sans-serif;
+  min-height: 100vh;
+  color: #CAD2C5;
+  align-items: center;
+  padding-top: 2rem;
+  font-weight: normal;
 }
 
 .site__header {
-  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-content: center;
+  margin-bottom: 3rem;
 }
 
 .header__title {
+  font-size: 46px;
+  text-transform: uppercase;
+  text-shadow: 0 0.6rem 0.7rem #b1c49d, 0 -0.1rem 0.1rem #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  position: relative;
+  top: 0;
+  left: 50%;
+  margin: 2.5rem 0;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
   text-align: center;
-}
-
-h1 {
-  color: white;
 }
 
 .add-city--form {
   display: flex;
   flex-direction: column;
+  height: 8rem;
   justify-content: space-between;
   align-items: center;
-  min-height: 50px;
 }
 
 #city-name {
-  background-color: transparent;
-  color: white;
-  outline: none;
   border: none;
-  border-bottom: 1px solid white;
+  outline: none;
+  height: 3rem;
+  width: 80%;
+  font-family: inherit;
+  background-color: transparent;
+  border-bottom: 0.4rem solid #CAD2C5;
+  color: #CAD2C5;
+  font-size: 24px;
 }
 #city-name::placeholder {
-  color: #a5a5a5;
+  font-size: 18px;
+  color: #96a58c;
+  text-align: center;
+}
+#city-name:focus {
+  border-bottom: 0.3rem dashed;
 }
 
 #add-city {
-  background-color: #4986d1;
-  border: 2px solid #386296;
+  border: none;
   outline: none;
-  width: 35%;
+  width: 10rem;
+  height: 3rem;
+  font-family: inherit;
+  background-color: #52796F;
+  color: #b1c8b6;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
 }
 
 .site__cards {
-  margin: 0 auto;
+  width: 90vw;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .card {
-  background-color: #8dcbff;
-  height: 50vh;
-  width: 60vw;
-  margin-right: 10px;
+  background-color: #CAD2C5;
+  min-width: 25rem;
+  min-height: 35rem;
+  margin-right: 1rem;
+  border: 1px solid red;
+}
+
+p {
+  font-size: 44px;
+  color: black;
+  background-color: tomato;
 }
 
 /*# sourceMappingURL=style.css.map */
