@@ -105,6 +105,7 @@ body {
 .site__cards {
   width: 90vw;
   height: calc(60vh - 1rem);
+  min-height: 40rem;
   display: flex;
   overflow-x: scroll;
   margin-bottom: 1rem;
