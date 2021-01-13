@@ -21,3 +21,8 @@
     display: flex;
     flex-direction: column;
 }
+
+@mixin cardGradient {
+    background: rgb(192,211,196);
+background: linear-gradient(180deg, rgba(192,211,196,1) 25%, rgba(192,211,196,0.35) 75%);
+}

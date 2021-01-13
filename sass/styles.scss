@@ -1,15 +1,17 @@
 @import "https://meyerweb.com/eric/tools/css/reset/reset.css";
+@import "https://necolas.github.io/normalize.css/8.0.1/normalize.css";
 
 @import "utilities/variables";
 @import "utilities/mixins";
 
-a, ul, li, input, form, button, label, textarea {
-  font-size: inherit;
-  color: inherit;
-}
-
 html {
+  box-sizing: border-box;
   font-size: $font-size-base;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 body {
@@ -31,7 +33,7 @@ body {
 }
 
 .header__title {
-  font-size: $font-size-xl;
+  font-size: $font-size-lg;
   text: {
     transform: uppercase;
     shadow: 0 0.6rem 0.7rem #b1c49d, 0 -0.1rem 0.1rem #fff;
@@ -41,30 +43,31 @@ body {
   position: relative;
   top: 0;
   left: 50%;
-  margin: 2.5rem 0;
+  margin: 2.5rem 0 0;
   transform: translate(-50%, -50%);
   border-radius: 20px;
   text-align: center;
 }
 
-.add-city--form{
-@include flexColumn;
-  height: 8rem;
+.add-city--form {
+  @include flexColumn;
+  height: 10rem;
   justify-content: space-between;
   align-items: center;
 }
 
 #city-name {
   @include borderAndOutline;
-  height: 3rem;
+  height: 4rem;
   width: 80%;
   font-family: inherit;
   background-color: transparent;
   border-bottom: 0.4rem solid $color-ash-gray;
   color: $color-ash-gray;
-  font-size: $font-size-sm;
+  font-size: $font-size-md;
+  padding: 0;
   &::placeholder {
-    font-size: $font-size-xs;
+    font-size: $font-size-sm;
     color: darken($color-ash-gray, 20%);
     text-align: center;
   }
@@ -73,38 +76,96 @@ body {
   }
 }
 
-#add-city {
+#btn-add-city {
   @include borderAndOutline;
-  width: 10rem;
-  height: 3rem;
-  font-family: inherit;
+  width: 50%;
+  max-width: 20rem;
+  height: 4rem;
+  font: {
+    family: inherit;
+    weight: bold;
+    size: $font-size-xs;
+  }
   background-color: $color-hookers-green;
   color: lighten($color-dark-sea-green, 15%);
-  font-weight: bold;
-  font-size: $font-size-xs;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   text-transform: uppercase;
+  padding: 0;
+  &:active {
+    background-color: darken($color: $color-hookers-green, $amount: 20%);
+  }
 }
 
 .site__cards {
   width: 90vw;
+  height: calc(60vh - 1rem);
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  
+  overflow-x: scroll;
+  margin-bottom: 1rem;
+}
+
+@media only screen and (min-width: $breakpoint-tablet) {
+  .site__cards {
+    height: auto;
+    flex-direction: column;
+    overflow-x: auto;
+  }
 }
 
 .card {
-  background-color: $color-ash-gray;
-  min-width: 25rem;
-  min-height: 35rem;
-  margin-right: 1rem;
-  border: 1px solid red;
+  @include flexColumn;
+  @include cardGradient;
+  min-width: 85%;
+  margin: 0 2rem 2rem 0;
+  margin-right: 2rem;
+  justify-content: space-between;
+  text-align: center;
+  padding: 3rem;
+  color: $color-charcoal;
+  border: 1px solid $color-charcoal;
+  border-radius: 1.5rem;
 }
 
-p {
-  font-size: $font-size-lg;
-  color: black;
-  background-color: tomato;
+.city {
+  font-size: $font-size-md;
+  width: 100%;
+}
+.country {
+  font-size: $font-size-xs;
+  background-color: $color-dark-slate-gray;
+  color: $color-ash-gray;
+  padding: 0.3rem;
+  border-radius: 1rem;
+  vertical-align: middle;
 }
 
+.temp {
+  @include flexColumn;
+  height: 80%;
+  justify-content: space-around;
+  align-items: center;
+  & p{
+    font: {
+      size: $font-size-xl;
+      weight: bold;
+    }
+    & sup {
+      font: {
+        size: $font-size-lg - 10px;
+        weight: normal;
+      }
+      vertical-align: middle;
+    }
+  }
+  p:last-child {
+    font: {
+      size: $font-size-xs;
+      weight: normal;
+      text-align: center;
+    }
+  }
+  & img {
+    height: 90%;
+    object-fit: contain;
+  }
+}

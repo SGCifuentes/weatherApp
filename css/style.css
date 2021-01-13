@@ -1,15 +1,18 @@
 @import "https://meyerweb.com/eric/tools/css/reset/reset.css";
+@import "https://necolas.github.io/normalize.css/8.0.1/normalize.css";
 /* COLORS */
 /* FONTS */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 /* BreakPoint */
-a, ul, li, input, form, button, label, textarea {
-  font-size: inherit;
-  color: inherit;
+html {
+  box-sizing: border-box;
+  font-size: 10px;
 }
 
-html {
-  font-size: 10px;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 body {
@@ -45,7 +48,7 @@ body {
   position: relative;
   top: 0;
   left: 50%;
-  margin: 2.5rem 0;
+  margin: 2.5rem 0 0;
   transform: translate(-50%, -50%);
   border-radius: 20px;
   text-align: center;
@@ -54,7 +57,7 @@ body {
 .add-city--form {
   display: flex;
   flex-direction: column;
-  height: 8rem;
+  height: 10rem;
   justify-content: space-between;
   align-items: center;
 }
@@ -62,16 +65,17 @@ body {
 #city-name {
   border: none;
   outline: none;
-  height: 3rem;
+  height: 4rem;
   width: 80%;
   font-family: inherit;
   background-color: transparent;
   border-bottom: 0.4rem solid #CAD2C5;
   color: #CAD2C5;
-  font-size: 24px;
+  font-size: 30px;
+  padding: 0;
 }
 #city-name::placeholder {
-  font-size: 18px;
+  font-size: 24px;
   color: #96a58c;
   text-align: center;
 }
@@ -79,39 +83,94 @@ body {
   border-bottom: 0.3rem dashed;
 }
 
-#add-city {
+#btn-add-city {
   border: none;
   outline: none;
-  width: 10rem;
-  height: 3rem;
+  width: 50%;
+  max-width: 20rem;
+  height: 4rem;
   font-family: inherit;
-  background-color: #52796F;
-  color: #b1c8b6;
   font-weight: bold;
   font-size: 18px;
-  border-radius: 0.5rem;
+  background-color: #52796F;
+  color: #b1c8b6;
+  border-radius: 1rem;
   text-transform: uppercase;
+  padding: 0;
+}
+#btn-add-city:active {
+  background-color: #293c37;
 }
 
 .site__cards {
   width: 90vw;
+  height: calc(60vh - 1rem);
+  display: flex;
+  overflow-x: scroll;
+  margin-bottom: 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .site__cards {
+    height: auto;
+    flex-direction: column;
+    overflow-x: auto;
+  }
+}
+.card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  background: #c0d3c4;
+  background: linear-gradient(180deg, #c0d3c4 25%, rgba(192, 211, 196, 0.35) 75%);
+  min-width: 85%;
+  margin: 0 2rem 2rem 0;
+  margin-right: 2rem;
+  justify-content: space-between;
+  text-align: center;
+  padding: 3rem;
+  color: #2F3E46;
+  border: 1px solid #2F3E46;
+  border-radius: 1.5rem;
 }
 
-.card {
-  background-color: #CAD2C5;
-  min-width: 25rem;
-  min-height: 35rem;
-  margin-right: 1rem;
-  border: 1px solid red;
+.city {
+  font-size: 30px;
+  width: 100%;
 }
 
-p {
-  font-size: 44px;
-  color: black;
-  background-color: tomato;
+.country {
+  font-size: 18px;
+  background-color: #354F52;
+  color: #CAD2C5;
+  padding: 0.3rem;
+  border-radius: 1rem;
+  vertical-align: middle;
+}
+
+.temp {
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  justify-content: space-around;
+  align-items: center;
+}
+.temp p {
+  font-size: 80px;
+  font-weight: bold;
+}
+.temp p sup {
+  font-size: 36px;
+  font-weight: normal;
+  vertical-align: middle;
+}
+.temp p:last-child {
+  font-size: 18px;
+  font-weight: normal;
+  font-text-align: center;
+}
+.temp img {
+  height: 90%;
+  object-fit: contain;
 }
 
 /*# sourceMappingURL=style.css.map */

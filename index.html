@@ -15,16 +15,27 @@
 
     <form class="add-city--form" onsubmit="return false">
       <input type="text" autocomplete="off" id="city-name" placeholder="Write the city name" />
-      <button id="add-city">Search</button>
+      <button id="btn-add-city">Search</button>
     </form>
   </header>
 
   <main class="site__cards">
     <div class="card">
-      <p>1</p>
+        <p class="city">Bogotá <span class="country">Co</span></p>
+      <div class="temp">
+        <p>20<sup>°C</sup></p>
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/03n.svg" alt="" />
+        <p>Parcialmente Nublado</p>
+      </div>
     </div>
+
     <div class="card">
-      <p>2</p>
+        <p class="city">Bogotá <span class="country">Co</span></p>
+      <div class="temp">
+        <p>20<sup>°C</sup></p>
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/10d.svg" alt="" />
+        <p>Despejado</p>
+      </div>
     </div>
     <div class="card">
       <p>3</p>
@@ -60,9 +71,10 @@
       <p>13</p>
     </div>
   </main>
-  <script>
-    ScrollReveal().reveal('.card');
-  </script>
+
+  <!-- <script>
+    ScrollReveal().reveal('.card', {reset: true});
+  </script> -->
   <script src="js/index.js"></script>
 </body>
 

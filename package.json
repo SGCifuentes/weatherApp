@@ -21,12 +21,9 @@
     "url": "https://github.com/SGCifuentes/weatherApp/issues"
   },
   "homepage": "https://github.com/SGCifuentes/weatherApp#readme",
-  "dependencies": {
-    "scrollreveal": "^4.0.7",
-    "static-server": "^2.2.1"
-  },
   "devDependencies": {
     "eslint": "^7.17.0",
-    "normalize.css": "^8.0.1"
+    "scrollreveal": "^4.0.7",
+    "static-server": "^2.2.1"
   }
 }
