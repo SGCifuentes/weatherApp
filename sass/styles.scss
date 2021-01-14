@@ -98,25 +98,17 @@ body {
 
 .site__cards {
   width: 90vw;
-  height: calc(60vh - 1rem);
+  height: calc(60vh - 2rem);
   min-height: 40rem;
   display: flex;
   overflow-x: scroll;
   margin-bottom: 1rem;
 }
 
-@media only screen and (min-width: $breakpoint-tablet) {
-  .site__cards {
-    height: auto;
-    flex-direction: column;
-    overflow-x: auto;
-  }
-}
-
 .card {
   @include flexColumn;
   @include cardGradient;
-  min-width: 85%;
+  min-width: 25rem;
   margin: 0 2rem 2rem 0;
   margin-right: 2rem;
   justify-content: space-between;
@@ -145,7 +137,7 @@ body {
   height: 80%;
   justify-content: space-around;
   align-items: center;
-  & p{
+  & p {
     font: {
       size: $font-size-xl;
       weight: bold;
@@ -166,7 +158,26 @@ body {
     }
   }
   & img {
-    height: 90%;
     object-fit: contain;
+  }
+}
+
+@media only screen and (min-width: $breakpoint-tablet) {
+  .header__title {
+    font-size: $font-size-xl - 10px;
+    letter-spacing: 1rem;
+    margin-top: 1.5rem;
+  }
+  #city-name {
+    height: 5rem;
+  }
+  .site__cards {
+    width: 95%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .card {
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
   }
 }

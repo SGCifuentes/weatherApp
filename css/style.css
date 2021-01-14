@@ -104,26 +104,19 @@ body {
 
 .site__cards {
   width: 90vw;
-  height: calc(60vh - 1rem);
+  height: calc(60vh - 2rem);
   min-height: 40rem;
   display: flex;
   overflow-x: scroll;
   margin-bottom: 1rem;
 }
 
-@media only screen and (min-width: 768px) {
-  .site__cards {
-    height: auto;
-    flex-direction: column;
-    overflow-x: auto;
-  }
-}
 .card {
   display: flex;
   flex-direction: column;
   background: #c0d3c4;
   background: linear-gradient(180deg, #c0d3c4 25%, rgba(192, 211, 196, 0.35) 75%);
-  min-width: 85%;
+  min-width: 25rem;
   margin: 0 2rem 2rem 0;
   margin-right: 2rem;
   justify-content: space-between;
@@ -170,8 +163,30 @@ body {
   font-text-align: center;
 }
 .temp img {
-  height: 90%;
   object-fit: contain;
+}
+
+@media only screen and (min-width: 768px) {
+  .header__title {
+    font-size: 70px;
+    letter-spacing: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  #city-name {
+    height: 5rem;
+  }
+
+  .site__cards {
+    width: 95%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .card {
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
