@@ -16,7 +16,6 @@ html {
 }
 
 body {
-  background: #2f3e46 no-repeat;
   background: -moz-linear-gradient(180deg, #2f3e46 25%, #52796f 75%);
   background: -webkit-linear-gradient(180deg, #2f3e46 25%, #52796f 75%);
   background: linear-gradient(180deg, #2f3e46 25%, #52796f 75%);
@@ -35,7 +34,6 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  align-content: center;
   margin-bottom: 3rem;
 }
 
@@ -57,8 +55,8 @@ body {
 .add-city--form {
   display: flex;
   flex-direction: column;
-  height: 10rem;
-  justify-content: space-between;
+  height: 13rem;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -68,6 +66,7 @@ body {
   height: 4rem;
   width: 80%;
   font-family: inherit;
+  margin-bottom: 1rem;
   background-color: transparent;
   border-bottom: 0.4rem solid #CAD2C5;
   color: #CAD2C5;
@@ -89,6 +88,7 @@ body {
   width: 50%;
   max-width: 20rem;
   height: 4rem;
+  margin-bottom: 1rem;
   font-family: inherit;
   font-weight: bold;
   font-size: 18px;
@@ -166,11 +166,26 @@ body {
   object-fit: contain;
 }
 
+.error {
+  color: red;
+  font-size: 24px;
+}
+
 @media only screen and (min-width: 768px) {
+  body {
+    padding-top: 0;
+    height: 100vh;
+  }
+
+  .site__header {
+    height: 36vh;
+    margin-bottom: 0;
+    padding-top: 2rem;
+  }
+
   .header__title {
     font-size: 70px;
     letter-spacing: 1rem;
-    margin-top: 1.5rem;
   }
 
   #city-name {
@@ -182,10 +197,20 @@ body {
     margin-top: 0;
     margin-bottom: 0;
   }
+  .site__cards::-webkit-scrollbar {
+    height: 1rem;
+    background-color: #CAD2C5;
+    border-radius: 1rem;
+  }
+  .site__cards::-webkit-scrollbar-thumb {
+    background-color: #354F52;
+    border-radius: 1rem;
+  }
 
   .card {
     margin-right: 1rem;
     margin-bottom: 0.5rem;
+    min-width: 30rem;
   }
 }
 

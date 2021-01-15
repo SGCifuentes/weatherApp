@@ -28,7 +28,6 @@ body {
 .site__header {
   @include flexColumn;
   width: 100%;
-  align-content: center;
   margin-bottom: 3rem;
 }
 
@@ -51,8 +50,8 @@ body {
 
 .add-city--form {
   @include flexColumn;
-  height: 10rem;
-  justify-content: space-between;
+  height: 13rem;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -61,6 +60,7 @@ body {
   height: 4rem;
   width: 80%;
   font-family: inherit;
+  margin-bottom: 1rem;
   background-color: transparent;
   border-bottom: 0.4rem solid $color-ash-gray;
   color: $color-ash-gray;
@@ -81,6 +81,7 @@ body {
   width: 50%;
   max-width: 20rem;
   height: 4rem;
+  margin-bottom: 1rem;
   font: {
     family: inherit;
     weight: bold;
@@ -162,22 +163,9 @@ body {
   }
 }
 
-@media only screen and (min-width: $breakpoint-tablet) {
-  .header__title {
-    font-size: $font-size-xl - 10px;
-    letter-spacing: 1rem;
-    margin-top: 1.5rem;
-  }
-  #city-name {
-    height: 5rem;
-  }
-  .site__cards {
-    width: 95%;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  .card {
-    margin-right: 1rem;
-    margin-bottom: 0.5rem;
-  }
+.error {
+  color: red;
+  font-size: $font-size-sm;
 }
+
+@import 'utilities/responsive';
