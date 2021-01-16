@@ -2,8 +2,8 @@ const inputText = document.getElementById("city-name"),
   btn = document.getElementById("btn-add-city"),
   form = document.querySelector(".add-city--form"),
   siteCards = document.querySelector(".site__cards"),
-  apiKey = "6e27421993a4ce79495c7afe6cdbec86",
-  msg = document.createTextNode("Please write a valid city 😩");
+  apiKey = "6e27421993a4ce79495c7afe6cdbec86";
+  let msg;
 
 const addCity = function () {
   const city = this.previousElementSibling.value;
@@ -18,6 +18,7 @@ const addCity = function () {
     } else {
       if (form.lastElementChild.tagName !== "P") {
         const p = document.createElement("p");
+        msg = document.createTextNode("Please write a valid city 😩");
         p.classList.add("error");
         p.appendChild(msg);
         form.append(p);
@@ -75,8 +76,9 @@ const createCard = function (data) {
   newCard(weather, main, sys, name);
 
   msg.textContent = "";
-  if (form.length > 2) {
-  form.removeChild(msg);
+  if (form.lastElementChild.tagName === "P") {
+  const p = document.querySelector('.error');
+  form.removeChild(p);
   }
   form.reset();
   inputText.focus();
