@@ -107,7 +107,7 @@ body {
   height: calc(60vh - 2rem);
   min-height: 40rem;
   display: flex;
-  overflow-x: scroll;
+  overflow-x: auto;
   margin-bottom: 1rem;
 }
 
@@ -136,8 +136,8 @@ body {
   font-size: 18px;
   background-color: #354F52;
   color: #CAD2C5;
-  padding: 0.3rem;
-  border-radius: 1rem;
+  padding: 0.6rem;
+  border-radius: 100%;
   vertical-align: middle;
 }
 
@@ -158,8 +158,8 @@ body {
   vertical-align: middle;
 }
 .temp p:last-child {
-  font-size: 18px;
-  font-weight: normal;
+  font-size: 24px;
+  font-weight: bold;
   font-text-align: center;
 }
 .temp img {
@@ -173,23 +173,21 @@ body {
 
 @media only screen and (min-width: 768px) {
   body {
-    padding-top: 0;
-    height: 100vh;
+    justify-content: center;
   }
 
   .site__header {
-    height: 36vh;
-    margin-bottom: 0;
-    padding-top: 2rem;
+    margin-bottom: 1rem;
   }
 
   .header__title {
     font-size: 70px;
     letter-spacing: 1rem;
+    margin-top: 0;
   }
 
-  #city-name {
-    height: 5rem;
+  .add-city--form {
+    height: auto;
   }
 
   .site__cards {

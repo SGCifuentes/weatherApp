@@ -1,20 +1,21 @@
 @media only screen and (min-width: $breakpoint-tablet) {
   body {
-    padding-top: 0;
-    height: 100vh;
+    justify-content: center;
   }
   .site__header {
-    height: 36vh;
-    margin-bottom: 0;
-    padding-top: 2rem;
+    margin-bottom: 1rem;
   }
+
   .header__title {
     font-size: $font-size-xl - 10px;
     letter-spacing: 1rem;
+    margin-top: 0;
   }
-  #city-name {
-    height: 5rem;
+
+  .add-city--form {
+    height: auto;
   }
+
   .site__cards {
     width: 95%;
     margin-top: 0;

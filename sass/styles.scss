@@ -102,7 +102,7 @@ body {
   height: calc(60vh - 2rem);
   min-height: 40rem;
   display: flex;
-  overflow-x: scroll;
+  overflow-x: auto;
   margin-bottom: 1rem;
 }
 
@@ -128,8 +128,8 @@ body {
   font-size: $font-size-xs;
   background-color: $color-dark-slate-gray;
   color: $color-ash-gray;
-  padding: 0.3rem;
-  border-radius: 1rem;
+  padding: 0.6rem;
+  border-radius: 100%;
   vertical-align: middle;
 }
 
@@ -153,8 +153,8 @@ body {
   }
   p:last-child {
     font: {
-      size: $font-size-xs;
-      weight: normal;
+      size: $font-size-sm;
+      weight: bold;
       text-align: center;
     }
   }
