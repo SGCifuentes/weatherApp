@@ -3,22 +3,22 @@ const inputText = document.getElementById("city-name"),
   form = document.querySelector(".add-city--form"),
   siteCards = document.querySelector(".site__cards"),
   apiKey = "6e27421993a4ce79495c7afe6cdbec86";
-  let msg;
+let msg;
 
 const addCity = function () {
   const city = this.previousElementSibling.value;
   form.reset();
-  
+
   if (siteCards.childElementCount > 0) {
-    
+
     let cityAct;
     for (let i = 0; i < siteCards.childElementCount; i++) {
       cityAct = siteCards.children[i].firstElementChild.firstChild.data.trim().toLowerCase();
-      if (city === cityAct ) {
+      if (city.toLowerCase() === cityAct) {
         if (form.lastElementChild.tagName === "P") {
           const p = document.querySelector('.error');
           form.removeChild(p);
-          }
+        }
         const p = document.createElement("p");
         msg = document.createTextNode("The city already exists 😕");
         p.classList.add("error");
@@ -40,7 +40,7 @@ const addCity = function () {
         if (form.lastElementChild.tagName === "P") {
           const p = document.querySelector('.error');
           form.removeChild(p);
-          }
+        }
         const p = document.createElement("p");
         msg = document.createTextNode("Please write a valid city 😩");
         p.classList.add("error");
@@ -95,13 +95,18 @@ function newCard(weather, main, sys, name) {
 }
 
 const createCard = function (data) {
-  const { main, name, sys, weather } = data;
+  const {
+    main,
+    name,
+    sys,
+    weather
+  } = data;
 
   newCard(weather, main, sys, name);
 
   if (form.lastElementChild.tagName === "P") {
-  const p = document.querySelector('.error');
-  form.removeChild(p);
+    const p = document.querySelector('.error');
+    form.removeChild(p);
   }
   form.reset();
   inputText.focus();
