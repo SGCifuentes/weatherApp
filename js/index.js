@@ -8,6 +8,26 @@ const inputText = document.getElementById("city-name"),
 const addCity = function () {
   const city = this.previousElementSibling.value;
   form.reset();
+  
+  if (siteCards.childElementCount > 0) {
+    
+    let cityAct;
+    for (let i = 0; i < siteCards.childElementCount; i++) {
+      cityAct = siteCards.children[i].firstElementChild.firstChild.data.trim().toLowerCase();
+      if (city === cityAct ) {
+        if (form.lastElementChild.tagName === "P") {
+          const p = document.querySelector('.error');
+          form.removeChild(p);
+          }
+        const p = document.createElement("p");
+        msg = document.createTextNode("The city already exists 😕");
+        p.classList.add("error");
+        p.appendChild(msg);
+        form.append(p);
+        return false;
+      }
+    }
+  }
 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   async function fetchData() {
@@ -17,6 +37,10 @@ const addCity = function () {
       createCard(data);
     } else {
       if (form.lastElementChild.tagName !== "P") {
+        if (form.lastElementChild.tagName === "P") {
+          const p = document.querySelector('.error');
+          form.removeChild(p);
+          }
         const p = document.createElement("p");
         msg = document.createTextNode("Please write a valid city 😩");
         p.classList.add("error");
@@ -75,7 +99,6 @@ const createCard = function (data) {
 
   newCard(weather, main, sys, name);
 
-  msg.textContent = "";
   if (form.lastElementChild.tagName === "P") {
   const p = document.querySelector('.error');
   form.removeChild(p);
