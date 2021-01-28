@@ -7,7 +7,7 @@ logs
 node_modules
 bower_components
 
-*.sublime*
+.eslintrc.js
 
 psd
 thumb
